@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote Generator - CodeAlpha</title>
+    <title>Random Quote Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,61 +11,55 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            color: white;
         }
-        .container {
-            background: white;
+      .box {
+            background: rgba(255,255,255,0.15);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             text-align: center;
-            max-width: 500px;
-        }
-        h1 {
-            color: #667eea;
-            margin-bottom: 30px;
-        }
-        #quote {
-            font-size: 20px;
-            color: #333;
-            margin: 30px 0;
-            min-height: 80px;
-        }
-        #author {
-            color: #764ba2;
-            font-weight: bold;
-            margin-bottom: 30px;
+            max-width: 600px;
         }
         button {
-            background: #667eea;
-            color: white;
-            border: none;
             padding: 15px 30px;
-            font-size: 16px;
+            font-size: 18px;
+            background: white;
+            color: #764ba2;
+            border: none;
             border-radius: 8px;
             cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
         }
-        button:hover {
-            background: #764ba2;
+        #quote-text {
+            font-size: 24px;
+            margin: 30px 0;
+            min-height: 60px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="box">
         <h1>Random Quote Generator</h1>
-        <p id="quote">Click the button to get a quote!</p>
-        <p id="author"></p>
+        <p id="quote-text">Click the button to get a quote!</p>
         <button onclick="newQuote()">New Quote</button>
     </div>
 
     <script>
         const quotes = [
-            {text: "The only way to do great work is to love what you do.", author: "Steve Jobs"},
-            {text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt"},
-            {text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill"},
-            {text: "Your time is limited, don't waste it living someone else's life.", author: "Steve Jobs"},
-            {text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt"}
+            "The best way to predict the future is to create it. - Peter Drucker",
+            "Success is not final, failure is not fatal. - Winston Churchill", 
+            "Believe you can and you're halfway there. - Theodore Roosevelt",
+            "Your time is limited, don't waste it. - Steve Jobs",
+            "Dream big and dare to fail. - Norman Vaughan",
+            "It does not matter how slowly you go as long as you do not stop. - Confucius",
+            "Everything you can imagine is real. - Pablo Picasso"
         ];
 
         function newQuote() {
-            const random = Math.floor(Math.random()
-            
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote-text').innerText = quotes[randomIndex];
+        }
+    </script>
+</body>
+</html>
